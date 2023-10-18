@@ -1,0 +1,115 @@
+body {
+    margin: auto;
+
+
+    font-family: sans-serif;
+}
+
+nav {
+    background-color: lightblue;
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+}
+nav a {
+    display: block;
+    background-color: azure;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: red;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    padding: 10px;
+    border: 1px solid black;
+    max-width: fit-content;
+}
+.bouton {
+    padding: 10px;
+    background-color: brown;
+    max-width: 100px;
+    margin-top: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.bouton > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+input {
+    display: block;
+    margin: 5px 0;
+}
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+tr:hover {
+    background-color: rgb(214, 171, 180);
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+input, select {
+    display: block;
+    padding: 5px;
+    width: 150px;
+    margin: 5px;
+}
+
+.error{
+    color: red;
+}
+
+
+fieldset{
+    max-width: 400px;
+}
+
+/* menu derulant */
+.menu-deroulant {
+    position: relative; /* permet les enfants en position absolue */
+}
+
+.menu-deroulant:hover {
+    background-color: lightgrey;
+}
+
+/* conteneur déroulant */
+.menu-deroulant > div {
+    position: absolute; /* évite d'agrandir la navigation */
+    top: 100%; /* assure le positionnement en-dessous du lien */
+    width: max-content; /* permet d'aller au-delà des dimensions du lien */
+    max-width: 20ch; /* limite les mots trop longs */
+    background-color: lightgrey; /* l'arrière-plan opaque est nécessaire à cause du chevauchement */
+}
+
+/* -- comportement d'affichage */
+.menu-deroulant:not(:hover) > div {
+    pointer-events: none;
+    opacity: 0;
+}
+
+
