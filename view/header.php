@@ -7,7 +7,7 @@
     <title>{{ title }}</title>
 </head>
 <body>
-    <div>
+    <div class="current_user">
         <span>Hello</span>
         {% if guest %}
         <span>guest!</span>
@@ -37,7 +37,7 @@
             </div>
         </div>
         {% endif %}
-        <div class="menu-deroulant">
+        <div class="menu-deroulant connexion">
             <a href="">Connexion</a>
             <div>
             {% if guest %}

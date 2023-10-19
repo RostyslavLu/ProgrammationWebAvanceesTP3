@@ -1,6 +1,6 @@
 <?php
-RequirePage::model('Voiture'); //client
-RequirePage::model('Marque'); //ville
+RequirePage::model('Voiture'); 
+RequirePage::model('Marque'); 
 RequirePage::model('User');
 class ControllerVoiture extends Controller
 {
@@ -40,16 +40,28 @@ class ControllerVoiture extends Controller
     {
 
         $voiture = new Voiture;
-        $insert = $voiture->insert($_POST);
+
+        $fileImage = $_FILES['photo_path'];
+        $uploadfile = UPLOAD_DIR . basename($fileImage['name']);
+        $fileName = $fileImage['name'];
+        $_POST['photo_path'] = $fileName;
+
+        if (move_uploaded_file($fileImage['tmp_name'], $uploadfile)) {
+            $insert = $voiture->insert($_POST);
+
+            RequirePage::redirect('voiture');
+        } else {
+            RequirePage::redirect('voiture-create');
+        }
 
         $user = new User;
         $user->addToLogbook($_SESSION['user_id'], $_SERVER['REMOTE_ADDR'], $_SERVER['REQUEST_URI'], 'NOW()');
 
         if ($insert) {
             RequirePage::redirect('voiture');
-         } else {
+        } else {
             print_r($insert);
-         }
+        }
         RequirePage::redirect('voiture');
     }
     public function show($id)
@@ -72,6 +84,7 @@ class ControllerVoiture extends Controller
         $selectId = $voiture->selectId($id);
         $marque = new Marque;
         $selectMarque = $marque->select();
+
         if ($_SESSION) {
             $user = new User;
             $user->addToLogbook($_SESSION['user_id'], $_SERVER['REMOTE_ADDR'], $_SERVER['REQUEST_URI'], 'NOW()');
@@ -83,17 +96,23 @@ class ControllerVoiture extends Controller
 
     public function update()
     {
-        $voiture = new Voiture;
-        $update = $voiture->update($_POST);
+        $fileImage = $_FILES['photo_path'];
+        $uploadfile = UPLOAD_DIR . basename($fileImage['name']);
+        $fileName = $fileImage['name'];
+        $_POST['photo_path'] = $fileName;
+
+        if (move_uploaded_file($fileImage['tmp_name'], $uploadfile)) {
+            $voiture = new Voiture;
+            $update = $voiture->update($_POST);
+
+            RequirePage::redirect('voiture');
+        } else {
+            RequirePage::redirect('voiture-edit');
+        }
 
         $user = new User;
         $user->addToLogbook($_SESSION['user_id'], $_SERVER['REMOTE_ADDR'], $_SERVER['REQUEST_URI'], 'NOW()');
 
-        if ($update) {
-            RequirePage::redirect('voiture');
-         } else {
-            print_r($update);
-         }
     }
     public function destroy()
     {

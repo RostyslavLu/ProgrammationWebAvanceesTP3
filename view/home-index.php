@@ -4,9 +4,9 @@
     <h1>Bienvenue!</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt rerum beatae eveniet deleniti non, veritatis quod hic reiciendis facere reprehenderit recusandae assumenda sequi dolor vitae incidunt ex tenetur unde accusantium.</p>
     {% if session.privilege == 1 %}
-    <div>
+    <div >
     <h1>Logbook</h1>
-    <table>
+    <table class="logbook">
     <tr>
         <th>ID</th>
         <th>User</th>

@@ -11,7 +11,7 @@
                         {% endif %}
             
             <p><strong>Marque: </strong>{{nom}}</p>
-            <img src="{{ voiture.photo_path }}" alt="photo_voiture">
+            <img src="../../assets/uploads/{{voiture.photo_path}}" alt="photo_voiture">
         </section>
         {% if session.privilege == 1 %}
         <div class="bouton"><a href="{{path}}voiture/edit/{{voiture.id}}">Mise à jour</a></div>

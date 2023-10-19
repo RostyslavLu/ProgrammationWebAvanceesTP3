@@ -27,6 +27,18 @@ nav a:hover {
     color: red;
 }
 
+.connexion {
+    margin-left: auto;
+}
+
+.current_user {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    background-color: lightblue;
+    padding: 0 20px;
+}
+
 main {
     padding: 20px;
 }
@@ -88,16 +100,14 @@ fieldset{
     max-width: 400px;
 }
 
-/* menu derulant */
 .menu-deroulant {
-    position: relative; /* permet les enfants en position absolue */
+    position: relative; 
 }
 
 .menu-deroulant:hover {
     background-color: lightgrey;
 }
 
-/* conteneur déroulant */
 .menu-deroulant > div {
     position: absolute; /* évite d'agrandir la navigation */
     top: 100%; /* assure le positionnement en-dessous du lien */
@@ -112,4 +122,6 @@ fieldset{
     opacity: 0;
 }
 
-
+.logbook {
+    font-size: 12px;
+}

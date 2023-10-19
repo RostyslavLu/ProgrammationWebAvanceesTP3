@@ -24,7 +24,7 @@
                     {% endif %}
                 </label>
                 <label>Photo</label>
-                <input type="file" name="photo" accept="image/*">
+                <input type="file" name="photo_path" accept="image/*">
                 <label> Marque:
                     <select name="marque_id">
                         <option selected></option>

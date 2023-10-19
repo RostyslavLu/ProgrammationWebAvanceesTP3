@@ -1,6 +1,7 @@
 <?php
 session_start();
 define('PATH_DIR', 'http://localhost:80/webAvancee22645/ProgrammationWebAvanceesTP3/');
+define('UPLOAD_DIR', __DIR__ . '/assets/uploads/');
 require_once(__DIR__.'/controller/Controller.php');
 require_once(__DIR__.'/library/View.php');
 require_once(__DIR__.'/library/RequirePage.php');

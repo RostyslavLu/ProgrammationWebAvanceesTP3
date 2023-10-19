@@ -16,8 +16,7 @@
                     </select>
                 </label>
                 <label>Marque
-                <label>Photo</label>
-                <input type="file" name="photo" >
+
                 {# envoyer des données #}        
                     <select name="marque_id">
                         <option></option>
@@ -27,7 +26,10 @@
                     </select>
                     
                 </label>
-                <a href="{{path}}marque/create">Ajouter marque de voiture</a>
+
+                <div><a href="{{path}}marque/create">Ajouter marque de voiture</a></div>
+                <label>Photo
+                <input type="file" name="photo_path" accept="image/*"></label>
                 <input type="submit" value="Enregistrer">
             </fieldset>
         </form>
